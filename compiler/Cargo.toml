@@ -1,0 +1,25 @@
+[package]
+name = "move-vm-llvm-compiler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+move-binary-format = { path = "../aptos-core/move/language/move-binary-format" }
+move-vm-runtime = { path = "../aptos-core/move/language/move-vm/runtime" }
+move-vm-types = { path = "../aptos-core/move/language/move-vm/types" }
+move-core-types = { path = "../aptos-core/move/language/move-core/types" }
+move-ir-types = { path = "../aptos-core/move/language/move-ir/types" }
+move-stdlib = { path = "../aptos-core/move/language/move-stdlib" }
+move-vm-test-utils = { path = "../aptos-core/move/language/move-vm/test-utils", features = ["table-extension"] }
+move-disassembler = { path = "../aptos-core/move/language/tools/move-disassembler" }
+aptos-vm = { path = "../aptos-core/aptos-move/aptos-vm" }
+aptos-gas = { path = "../aptos-core/aptos-move/aptos-gas" }
+anyhow = "1.0.69"
+clap = { version = "4.1.6", features = ["derive"] }
+
+[dependencies.inkwell]
+git = "https://github.com/TheDan64/inkwell"
+branch = "master"
+features = ["llvm10-0", "target-x86"]
